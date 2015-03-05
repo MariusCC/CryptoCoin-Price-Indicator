@@ -24,6 +24,7 @@ import os
 from os.path import expanduser
 HOME = expanduser("~")
 
+# bitcoin_url = "https://api.bitcoinaverage.com/ticker/global/EUR/"
 
 SETTINGSFILE = os.path.abspath(HOME+"/.local/share/applications/settingsCryptoIndicator.dat")
 BAD_RETRIEVE = 0.00001
@@ -147,6 +148,7 @@ class CryptoCoinPriceIndicator:
         self.BTCtickers = self.bitstampBTC
         self.blockchainBTC = gtk.RadioMenuItem(self.BTCtickers,"BlockChain"); self.blockchainBTC.connect("activate", lambda x: self.toggleBTCdisplay("blockchain")); self.blockchainBTC.show()
         self.BTCtickers = self.blockchainBTC
+        
 
         self.defSet = gtk.MenuItem("Choose exchange : "); self.defSet.show()
         self.menu.append(self.defSet)
